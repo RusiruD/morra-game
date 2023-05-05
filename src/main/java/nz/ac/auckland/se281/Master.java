@@ -9,5 +9,11 @@ public class Master implements DifficultyInterface{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'randomMethod'");
     }
+
+    @Override
+    public ArrayList<Integer> averageMethod(ArrayList<Integer> pastTurns, Integer round) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'averageMethod'");
+    }
     
 }

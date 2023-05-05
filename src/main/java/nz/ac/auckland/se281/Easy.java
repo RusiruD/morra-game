@@ -16,5 +16,11 @@ public class Easy implements DifficultyInterface {
         System.out.println(AiGuesses.get(1));
         return AiGuesses;
     }
+
+    @Override
+    public ArrayList<Integer> averageMethod(ArrayList<Integer> pastTurns, Integer round) {
+        return pastTurns;
+
+    }
     
 }

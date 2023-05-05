@@ -16,17 +16,20 @@ public class Morra {
   public void newGame(Difficulty difficulty, int pointsToWin, String[] options) {
     MessageCli.WELCOME_PLAYER.printMessage(options[0]);
     name=options[0];
+    rounds=0;
+    ArrayList<Integer> pastTurns = new ArrayList<>();
+
     
 
   }
 
-  
+  ArrayList<Integer> pastTurns = new ArrayList<>();
   public void play() {
     
 
     rounds=rounds+1;
-    System.out.println(rounds);
-    ArrayList<Integer> pastTurns = new ArrayList<>();
+    
+   
     MessageCli.START_ROUND.printMessage(Integer.toString(rounds));
     int valid=0;
     int fingers=0;
@@ -46,11 +49,16 @@ public class Morra {
       }else{
       MessageCli.INVALID_INPUT.printMessage();}}
       
+     
       
       
-      DifficultyInterface diff=DifficultyFactory.makeGuess("Easy");
+      /*DifficultyInterface diff=DifficultyFactory.makeGuess("Easy");
       ArrayList<Integer> AiGuesses = new ArrayList<>();
-      AiGuesses.addAll(diff.randomMethod(pastTurns, rounds));
+      AiGuesses.addAll(diff.randomMethod(pastTurns, rounds));*/
+
+      DifficultyInterface diff=DifficultyFactory.makeGuess("Medium");
+      ArrayList<Integer> AiGuesses = new ArrayList<>();
+      AiGuesses.addAll(diff.averageMethod(pastTurns, rounds));
       
     
 
@@ -69,7 +77,11 @@ public class Morra {
   else{
 MessageCli.PRINT_OUTCOME_ROUND.printMessage("DRAW");
   }
+  for(int i=0; i<pastTurns.size(); i++){
+    System.out.println(pastTurns.get(i));
+  }
   pastTurns.add(fingers);
+  
    
     
   }
