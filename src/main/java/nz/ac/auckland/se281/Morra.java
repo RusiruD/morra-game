@@ -62,10 +62,10 @@ public class Morra {
     while (valid == 0) {
       MessageCli.ASK_INPUT.printMessage("Give <fingers> <sum> and press enter");
       String input = Utils.scanner.nextLine();
-      String[] input_array = input.split(" ");
+      String[] inputArray = input.split(" ");
 
-      fingers = Integer.parseInt(input_array[0]);
-      sum = Integer.parseInt(input_array[1]);
+      fingers = Integer.parseInt(inputArray[0]);
+      sum = Integer.parseInt(inputArray[1]);
 
       // if a valid amount of fingers and sum is guessed by the user output the info
       // message.
@@ -90,26 +90,26 @@ public class Morra {
 
       DifficultyInterface easyDifficulty = DifficultyFactory.makeGuess("Easy");
       aiGuesses = new ArrayList<Integer>();
-      aiGuesses.addAll(easyDifficulty.randomMethod(pastTurns, roundsPlayed));
+      aiGuesses.addAll(easyDifficulty.randomGuessMethod(pastTurns, roundsPlayed));
     }
     if (difficultylevel == 2) {
 
       DifficultyInterface mediumDifficulty = DifficultyFactory.makeGuess("Medium");
       aiGuesses = new ArrayList<Integer>();
 
-      aiGuesses.addAll(mediumDifficulty.averageMethod(pastTurns, roundsPlayed));
+      aiGuesses.addAll(mediumDifficulty.averageGuessMethod(pastTurns, roundsPlayed));
     }
     if (difficultylevel == 3) {
 
       DifficultyInterface hardDifficulty = DifficultyFactory.makeGuess("Hard");
       aiGuesses = new ArrayList<Integer>();
-      aiGuesses.addAll(hardDifficulty.hardMethod(pastTurns, roundsPlayed));
+      aiGuesses.addAll(hardDifficulty.hardGuessMethod(pastTurns, roundsPlayed));
     }
     if (difficultylevel == 4) {
 
       DifficultyInterface masterDifficulty = DifficultyFactory.makeGuess("Master");
       aiGuesses = new ArrayList<Integer>();
-      aiGuesses.addAll(masterDifficulty.masterMethod(pastTurns, roundsPlayed));
+      aiGuesses.addAll(masterDifficulty.masterGuessMethod(pastTurns, roundsPlayed));
     }
 
     MessageCli.PRINT_INFO_HAND.printMessage("Jarvis", Integer.toString(aiGuesses.get(0)),

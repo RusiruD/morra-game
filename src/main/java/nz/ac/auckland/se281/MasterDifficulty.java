@@ -5,35 +5,35 @@ import java.util.ArrayList;
 public class MasterDifficulty implements DifficultyInterface{
 
     @Override
-    public ArrayList<Integer> randomMethod(ArrayList<Integer> pastTurns, Integer round) {
-        ArrayList<Integer> AiGuesses = new ArrayList<>();
+    public ArrayList<Integer> randomGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
+        ArrayList<Integer> aiGuesses = new ArrayList<>();
         RandomStrategy master = new RandomStrategy();
         StrategySystem system = new StrategySystem(master);
      
-        AiGuesses.addAll(system.guess(pastTurns));
+        aiGuesses.addAll(system.guess(pastTurns));
         
-        return AiGuesses;
+        return aiGuesses;
     }
 
     @Override
-    public ArrayList<Integer> averageMethod(ArrayList<Integer> pastTurns, Integer round) {
+    public ArrayList<Integer> averageGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
         // if its the first 3 rounds, use the random method
         if (round<=3){
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
            
-            AiGuesses=randomMethod(pastTurns, round);
-            return AiGuesses;
+            aiGuesses=randomGuessMethod(pastTurns, round);
+            return aiGuesses;
 
            
 }       //if its not the first 3 rounds, use the average method
         else{
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
             AverageStrategy master = new AverageStrategy();
             StrategySystem system = new StrategySystem(master);
      
-            AiGuesses.addAll(system.guess(pastTurns));
+            aiGuesses.addAll(system.guess(pastTurns));
         
-            return AiGuesses;
+            return aiGuesses;
 
 
            
@@ -41,24 +41,24 @@ public class MasterDifficulty implements DifficultyInterface{
     }
 
     @Override
-    public ArrayList<Integer> hardMethod(ArrayList<Integer> pastTurns, Integer round) {
+    public ArrayList<Integer> hardGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
         //if its the first 3 rounds, use the random method
         if (round<=3){
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
            
-            AiGuesses=randomMethod(pastTurns, round);
-            return AiGuesses;
+            aiGuesses=randomGuessMethod(pastTurns, round);
+            return aiGuesses;
         }
         //if its not the first 3 rounds, use the top method
         else{
 
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
             TopStrategy master = new TopStrategy();
             StrategySystem system = new StrategySystem(master);
          
-            AiGuesses.addAll(system.guess(pastTurns));
+            aiGuesses.addAll(system.guess(pastTurns));
             
-            return AiGuesses;
+            return aiGuesses;
 
 
            
@@ -66,27 +66,27 @@ public class MasterDifficulty implements DifficultyInterface{
         }
     }
 
-    public ArrayList<Integer> masterMethod(ArrayList<Integer> pastTurns, Integer round) {
+    public ArrayList<Integer> masterGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
         //if its the first 3 rounds, use the random method
         if (round<=3){
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
            
-            AiGuesses=randomMethod(pastTurns, round);
-            return AiGuesses;
+            aiGuesses=randomGuessMethod(pastTurns, round);
+            return aiGuesses;
         }
         //if its not the first 3 round alternate between the average and top strategys
     else if(round % 2 == 0){
         if (round<=3){
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
            
-            AiGuesses=randomMethod(pastTurns, round);
-            return AiGuesses;
+            aiGuesses=randomGuessMethod(pastTurns, round);
+            return aiGuesses;
 }
         else{
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
            
-            AiGuesses=averageMethod(pastTurns, round);
-            return AiGuesses;
+            aiGuesses=averageGuessMethod(pastTurns, round);
+            return aiGuesses;
            
 
 
@@ -94,10 +94,10 @@ public class MasterDifficulty implements DifficultyInterface{
         }}
 
         else{
-            ArrayList<Integer> AiGuesses = new ArrayList<>();
+            ArrayList<Integer> aiGuesses = new ArrayList<>();
            
-            AiGuesses=hardMethod(pastTurns, round);
-            return AiGuesses;
+            aiGuesses=hardGuessMethod(pastTurns, round);
+            return aiGuesses;
            
         }
 

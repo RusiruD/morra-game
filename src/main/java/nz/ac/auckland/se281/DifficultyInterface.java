@@ -7,11 +7,11 @@ public interface DifficultyInterface {
 
     //implements the methods for each difficulty that implements the interface
     
-    ArrayList<Integer> randomMethod(ArrayList<Integer> pastTurns, Integer round);
+    ArrayList<Integer> randomGuessMethod(ArrayList<Integer> pastTurns, Integer round);
 
-    ArrayList<Integer> averageMethod(ArrayList<Integer> pastTurns, Integer round);
-    ArrayList<Integer> hardMethod(ArrayList<Integer> pastTurns,Integer round);
-    ArrayList<Integer>masterMethod(ArrayList<Integer> pastTurns,Integer round);
+    ArrayList<Integer> averageGuessMethod(ArrayList<Integer> pastTurns, Integer round);
+    ArrayList<Integer> hardGuessMethod(ArrayList<Integer> pastTurns,Integer round);
+    ArrayList<Integer>masterGuessMethod(ArrayList<Integer> pastTurns,Integer round);
     
     
 }
