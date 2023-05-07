@@ -19,9 +19,9 @@ public class MasterDifficulty implements DifficultyInterface{
     public ArrayList<Integer> averageGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
         // if its the first 3 rounds, use the random method
         if (round<=3){
-            ArrayList<Integer> aiGuesses = new ArrayList<>();
            
-            aiGuesses=randomGuessMethod(pastTurns, round);
+           
+            ArrayList<Integer> aiGuesses=randomGuessMethod(pastTurns, round);
             return aiGuesses;
 
            
