@@ -2,7 +2,7 @@ package nz.ac.auckland.se281;
 
 import java.util.ArrayList;
 
-public class Easy implements DifficultyInterface {
+public class EasyDifficulty implements DifficultyInterface {
 
     @Override
     public ArrayList<Integer> randomMethod(ArrayList<Integer> pastTurns, Integer round) {

@@ -82,41 +82,41 @@ public class Morra {
       }
     }
 
-    ArrayList<Integer> AiGuesses = new ArrayList<>();
+    ArrayList<Integer> aiGuesses = new ArrayList<>();
 
     // depending on the difficulty level, call the appropriate method from the
     // difficulty interface
     if (difficultylevel == 1) {
 
       DifficultyInterface easyDifficulty = DifficultyFactory.makeGuess("Easy");
-      AiGuesses = new ArrayList<Integer>();
-      AiGuesses.addAll(easyDifficulty.randomMethod(pastTurns, roundsPlayed));
+      aiGuesses = new ArrayList<Integer>();
+      aiGuesses.addAll(easyDifficulty.randomMethod(pastTurns, roundsPlayed));
     }
     if (difficultylevel == 2) {
 
       DifficultyInterface mediumDifficulty = DifficultyFactory.makeGuess("Medium");
-      AiGuesses = new ArrayList<Integer>();
+      aiGuesses = new ArrayList<Integer>();
 
-      AiGuesses.addAll(mediumDifficulty.averageMethod(pastTurns, roundsPlayed));
+      aiGuesses.addAll(mediumDifficulty.averageMethod(pastTurns, roundsPlayed));
     }
     if (difficultylevel == 3) {
 
       DifficultyInterface hardDifficulty = DifficultyFactory.makeGuess("Hard");
-      AiGuesses = new ArrayList<Integer>();
-      AiGuesses.addAll(hardDifficulty.hardMethod(pastTurns, roundsPlayed));
+      aiGuesses = new ArrayList<Integer>();
+      aiGuesses.addAll(hardDifficulty.hardMethod(pastTurns, roundsPlayed));
     }
     if (difficultylevel == 4) {
 
       DifficultyInterface masterDifficulty = DifficultyFactory.makeGuess("Master");
-      AiGuesses = new ArrayList<Integer>();
-      AiGuesses.addAll(masterDifficulty.masterMethod(pastTurns, roundsPlayed));
+      aiGuesses = new ArrayList<Integer>();
+      aiGuesses.addAll(masterDifficulty.masterMethod(pastTurns, roundsPlayed));
     }
 
-    MessageCli.PRINT_INFO_HAND.printMessage("Jarvis", Integer.toString(AiGuesses.get(0)),
-        Integer.toString(AiGuesses.get(1)));
+    MessageCli.PRINT_INFO_HAND.printMessage("Jarvis", Integer.toString(aiGuesses.get(0)),
+        Integer.toString(aiGuesses.get(1)));
     // if the sum of the fingers guessed by the user plus the fingers guessed by the
     // ai is only equal to the sum guessed by the AI, the AI wins
-    if ((AiGuesses.get(1) == (fingers + AiGuesses.get(0))) && AiGuesses.get(1) != sum) {
+    if ((aiGuesses.get(1) == (fingers + aiGuesses.get(0))) && aiGuesses.get(1) != sum) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("AI_WINS");
 
       // if the AI wins the round and has the required number of points to win, print
@@ -131,7 +131,7 @@ public class Morra {
     }
     // if the sum of the fingers guessed by the user plus the fingers guessed by the
     // ai is only equal to the sum guessed by the user the user wins
-    else if ((sum == (fingers + AiGuesses.get(0))) && sum != AiGuesses.get(1)) {
+    else if ((sum == (fingers + aiGuesses.get(0))) && sum != aiGuesses.get(1)) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("HUMAN_WINS");
 
       // if the user wins the round and has the required number of points to win,

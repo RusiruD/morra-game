@@ -9,16 +9,16 @@ public class DifficultyFactory {
         switch(difficulty){
 
               case "Easy":
-                   return new Easy();
+                   return new EasyDifficulty();
                    
                case "Medium":
-                   return new Medium();
+                   return new MediumDifficulty();
 
                case "Hard":
-                   return new Hard();
+                   return new HardDifficulty();
 
                 case "Master":
-                    return new Master();
+                    return new MasterDifficulty();
 
                default:
                    return null; // don't learn this
