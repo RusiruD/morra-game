@@ -18,7 +18,6 @@ public class Morra {
   protected ArrayList<Integer> pastTurns = new ArrayList<>();
 
   public Morra() {
-    
 
   }
 

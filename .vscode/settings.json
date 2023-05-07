@@ -1,6 +1,7 @@
 {
     "editor.formatOnSave": true,
     "[java]": {
-        "editor.defaultFormatter": "mngrm3a.vscode-google-java-formatter",
+        "editor.defaultFormatter": "redhat.java",
     },
+    "java.format.settings.google.executable": "java.format.settings.google.executable",
 }
