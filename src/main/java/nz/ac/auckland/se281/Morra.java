@@ -92,6 +92,7 @@ public class Morra {
       aiGuesses = new ArrayList<Integer>();
       aiGuesses.addAll(easyDifficulty.randomGuessMethod(pastTurns, roundsPlayed));
     }
+
     if (difficultylevel == 2) {
 
       DifficultyInterface mediumDifficulty = DifficultyFactory.makeGuess("Medium");
