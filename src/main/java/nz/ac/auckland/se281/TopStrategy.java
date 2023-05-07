@@ -1,14 +1,14 @@
 package nz.ac.auckland.se281;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
+
 
 
 public class TopStrategy implements Strategy{
 
     @Override
-    public ArrayList takeTurn(ArrayList pastTurns) {
+    public ArrayList<Integer> takeTurn(ArrayList pastTurns) {
         int aiFingers=(Utils.getRandomNumber(1,5)); 
         //find the most common value in an array named pastTurns
         int maxCount=0;

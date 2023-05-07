@@ -1,7 +1,7 @@
 package nz.ac.auckland.se281;
 
 import java.util.ArrayList;
-import java.util.Random;
+
 
 import nz.ac.auckland.se281.Main.Difficulty;
 
@@ -75,28 +75,29 @@ public class Morra {
       ArrayList<Integer> AiGuesses = new ArrayList<>();
       
       if(level==1){
-      DifficultyInterface diff=DifficultyFactory.makeGuess("Easy");
-        AiGuesses = new ArrayList<>();
-        AiGuesses.addAll(diff.randomMethod(pastTurns, rounds));
+        
+      DifficultyInterface easyDifficulty=DifficultyFactory.makeGuess("Easy");
+        AiGuesses = new ArrayList<Integer>();
+        AiGuesses.addAll(easyDifficulty.randomMethod(pastTurns, rounds));
       }
       if(level==2){
 
-      DifficultyInterface diff=DifficultyFactory.makeGuess("Medium");
-       AiGuesses = new ArrayList<>();
+      DifficultyInterface mediumDifficulty=DifficultyFactory.makeGuess("Medium");
+       AiGuesses = new ArrayList<Integer>();
       
-        AiGuesses.addAll(diff.averageMethod(pastTurns, rounds));
+        AiGuesses.addAll(mediumDifficulty.averageMethod(pastTurns, rounds));
       }
       if(level==3){
       
-     DifficultyInterface diff=DifficultyFactory.makeGuess("Hard");
-       AiGuesses = new ArrayList<>();
-      AiGuesses.addAll(diff.hardMethod(pastTurns, rounds));
+     DifficultyInterface hardDifficulty=DifficultyFactory.makeGuess("Hard");
+       AiGuesses = new ArrayList<Integer>();
+      AiGuesses.addAll(hardDifficulty.hardMethod(pastTurns, rounds));
       }
       if(level==4){
 
-      DifficultyInterface diff=DifficultyFactory.makeGuess("Master");
-      AiGuesses = new ArrayList<>();
-      AiGuesses.addAll(diff.masterMethod(pastTurns, rounds));
+      DifficultyInterface masterDifficulty=DifficultyFactory.makeGuess("Master");
+      AiGuesses = new ArrayList<Integer>();
+      AiGuesses.addAll(masterDifficulty.masterMethod(pastTurns, rounds));
       }
       
 

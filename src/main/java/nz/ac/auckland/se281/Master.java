@@ -11,8 +11,7 @@ public class Master implements DifficultyInterface{
         StrategySystem system = new StrategySystem(master);
      
         AiGuesses.addAll(system.guess(pastTurns));
-        System.out.println(AiGuesses.get(0));
-        System.out.println(AiGuesses.get(1));
+        
         return AiGuesses;
     }
 

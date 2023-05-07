@@ -1,20 +1,17 @@
 package nz.ac.auckland.se281;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Hard implements DifficultyInterface{
 
     @Override
     public ArrayList<Integer> randomMethod(ArrayList<Integer> pastTurns, Integer round) {
         ArrayList<Integer> AiGuesses = new ArrayList<>();
-        RandomStrategy master = new RandomStrategy();
-        StrategySystem system = new StrategySystem(master);
+        RandomStrategy randomMethod = new RandomStrategy();
+        StrategySystem system = new StrategySystem(randomMethod);
      
         AiGuesses.addAll(system.guess(pastTurns));
-        System.out.println(AiGuesses.get(0));
-        System.out.println(AiGuesses.get(1));
+       
         return AiGuesses;
     }
 
@@ -34,8 +31,8 @@ public class Hard implements DifficultyInterface{
         }
         else{
             ArrayList<Integer> AiGuesses = new ArrayList<>();
-            TopStrategy master = new TopStrategy();
-            StrategySystem system = new StrategySystem(master);
+            TopStrategy topMethod = new TopStrategy();
+            StrategySystem system = new StrategySystem(topMethod);
          
             AiGuesses.addAll(system.guess(pastTurns));
             

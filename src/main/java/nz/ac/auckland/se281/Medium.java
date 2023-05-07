@@ -7,8 +7,8 @@ public class Medium implements DifficultyInterface{
     @Override
     public ArrayList<Integer> randomMethod(ArrayList<Integer> pastTurns, Integer round) {
         ArrayList<Integer> AiGuesses = new ArrayList<>();
-        RandomStrategy master = new RandomStrategy();
-        StrategySystem system = new StrategySystem(master);
+        RandomStrategy randomMethod = new RandomStrategy();
+        StrategySystem system = new StrategySystem(randomMethod);
      
         AiGuesses.addAll(system.guess(pastTurns));
         
@@ -26,8 +26,8 @@ public class Medium implements DifficultyInterface{
 }
         else{
             ArrayList<Integer> AiGuesses = new ArrayList<>();
-            AverageStrategy master = new AverageStrategy();
-            StrategySystem system = new StrategySystem(master);
+            AverageStrategy averageMethod = new AverageStrategy();
+            StrategySystem system = new StrategySystem(averageMethod);
      
             AiGuesses.addAll(system.guess(pastTurns));
         

@@ -8,12 +8,11 @@ public class Easy implements DifficultyInterface {
     public ArrayList<Integer> randomMethod(ArrayList<Integer> pastTurns, Integer round) {
 
         ArrayList<Integer> AiGuesses = new ArrayList<>();
-        RandomStrategy master = new RandomStrategy();
-        StrategySystem system = new StrategySystem(master);
+        RandomStrategy randomMethod = new RandomStrategy();
+        StrategySystem system = new StrategySystem(randomMethod);
      
         AiGuesses.addAll(system.guess(pastTurns));
-        System.out.println(AiGuesses.get(0));
-        System.out.println(AiGuesses.get(1));
+      
         return AiGuesses;
     }
 

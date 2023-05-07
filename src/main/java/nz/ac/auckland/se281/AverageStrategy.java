@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class AverageStrategy implements Strategy {
 
     @Override
-    public ArrayList takeTurn(ArrayList<Integer> pastTurns) {
+    public ArrayList<Integer> takeTurn(ArrayList<Integer> pastTurns) {
         int aiFingers=(Utils.getRandomNumber(1,5)); 
         double average=0;
 
