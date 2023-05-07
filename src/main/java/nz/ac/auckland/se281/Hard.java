@@ -24,12 +24,14 @@ public class Hard implements DifficultyInterface{
     @Override
     public ArrayList<Integer> hardMethod(ArrayList<Integer> pastTurns, Integer round) {
         if (round<=3){
+            //if its the first 3 rounds, use the random method
             ArrayList<Integer> AiGuesses = new ArrayList<>();
            
             AiGuesses=randomMethod(pastTurns, round);
             return AiGuesses;
         }
         else{
+            //if its not the first 3 rounds, use the top method
             ArrayList<Integer> AiGuesses = new ArrayList<>();
             TopStrategy topMethod = new TopStrategy();
             StrategySystem system = new StrategySystem(topMethod);

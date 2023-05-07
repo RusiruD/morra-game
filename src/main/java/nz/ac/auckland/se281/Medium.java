@@ -16,6 +16,8 @@ public class Medium implements DifficultyInterface{
     }
     @Override
     public ArrayList<Integer> averageMethod(ArrayList<Integer> pastTurns, Integer round){
+
+        //if its the first 3 rounds, use the random method
         if (round<=3){
             ArrayList<Integer> AiGuesses = new ArrayList<>();
            
@@ -25,6 +27,7 @@ public class Medium implements DifficultyInterface{
            
 }
         else{
+            //if its not the first 3 rounds, use the average method
             ArrayList<Integer> AiGuesses = new ArrayList<>();
             AverageStrategy averageMethod = new AverageStrategy();
             StrategySystem system = new StrategySystem(averageMethod);

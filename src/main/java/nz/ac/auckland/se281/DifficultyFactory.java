@@ -1,8 +1,11 @@
 package nz.ac.auckland.se281;
 
 public class DifficultyFactory {
-    public static DifficultyInterface  makeGuess(String difficulty){
-       
+
+
+    public static DifficultyInterface makeGuess(String difficulty){
+
+        //depending on the difficulty input, return the corresponding difficulty class
         switch(difficulty){
 
               case "Easy":
@@ -18,7 +21,7 @@ public class DifficultyFactory {
                     return new Master();
 
                default:
-                   return null; // don't learn thi
+                   return null; // don't learn this
 
         }       
 

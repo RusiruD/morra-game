@@ -9,8 +9,10 @@ public class TopStrategy implements Strategy{
 
     @Override
     public ArrayList<Integer> takeTurn(ArrayList pastTurns) {
+      //the ai guesses a random number of fingers between 1 and 5
         int aiFingers=(Utils.getRandomNumber(1,5)); 
-        //find the most common value in an array named pastTurns
+
+        //find the number of figures the plaeyer has most frequently played 
         int maxCount=0;
         int maxFreq=0;
         for (int i = 0; i < pastTurns.size(); i++){

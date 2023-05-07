@@ -17,6 +17,7 @@ public class Master implements DifficultyInterface{
 
     @Override
     public ArrayList<Integer> averageMethod(ArrayList<Integer> pastTurns, Integer round) {
+        // if its the first 3 rounds, use the random method
         if (round<=3){
             ArrayList<Integer> AiGuesses = new ArrayList<>();
            
@@ -24,7 +25,7 @@ public class Master implements DifficultyInterface{
             return AiGuesses;
 
            
-}
+}       //if its not the first 3 rounds, use the average method
         else{
             ArrayList<Integer> AiGuesses = new ArrayList<>();
             AverageStrategy master = new AverageStrategy();
@@ -41,13 +42,16 @@ public class Master implements DifficultyInterface{
 
     @Override
     public ArrayList<Integer> hardMethod(ArrayList<Integer> pastTurns, Integer round) {
+        //if its the first 3 rounds, use the random method
         if (round<=3){
             ArrayList<Integer> AiGuesses = new ArrayList<>();
            
             AiGuesses=randomMethod(pastTurns, round);
             return AiGuesses;
         }
+        //if its not the first 3 rounds, use the top method
         else{
+
             ArrayList<Integer> AiGuesses = new ArrayList<>();
             TopStrategy master = new TopStrategy();
             StrategySystem system = new StrategySystem(master);
@@ -63,12 +67,14 @@ public class Master implements DifficultyInterface{
     }
 
     public ArrayList<Integer> masterMethod(ArrayList<Integer> pastTurns, Integer round) {
+        //if its the first 3 rounds, use the random method
         if (round<=3){
             ArrayList<Integer> AiGuesses = new ArrayList<>();
            
             AiGuesses=randomMethod(pastTurns, round);
             return AiGuesses;
         }
+        //if its not the first 3 round alternate between the average and top strategys
     else if(round % 2 == 0){
         if (round<=3){
             ArrayList<Integer> AiGuesses = new ArrayList<>();
