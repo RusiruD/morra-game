@@ -25,9 +25,9 @@ public class HardDifficulty implements DifficultyInterface{
     public ArrayList<Integer> hardGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
         if (round<=3){
             //if its the first 3 rounds, use the random method
-            ArrayList<Integer> aiGuesses = new ArrayList<>();
+            
            
-            aiGuesses=randomGuessMethod(pastTurns, round);
+            ArrayList<Integer>aiGuesses=randomGuessMethod(pastTurns, round);
             return aiGuesses;
         }
         else{
