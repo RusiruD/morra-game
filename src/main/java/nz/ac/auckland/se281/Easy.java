@@ -22,5 +22,17 @@ public class Easy implements DifficultyInterface {
         return pastTurns;
 
     }
+
+    @Override
+    public ArrayList<Integer> hardMethod(ArrayList<Integer> pastTurns, Integer round) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'hardMethod'");
+    }
+
+    @Override
+    public ArrayList<Integer> masterMethod(ArrayList<Integer> pastTurns, Integer round) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'masterMethod'");
+    }
     
 }
