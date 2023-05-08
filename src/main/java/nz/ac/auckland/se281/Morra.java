@@ -72,7 +72,9 @@ public class Morra {
       // message.
       if (fingers >= 1 && fingers <= 5 && sum >= 1 && sum <= 10) {
 
-        MessageCli.PRINT_INFO_HAND.printMessage(name, Integer.toString(fingers), Integer.toString(sum));
+        MessageCli.PRINT_INFO_HAND.printMessage(name,
+            Integer.toString(fingers),
+            Integer.toString(sum));
         valid = 1;
 
       }

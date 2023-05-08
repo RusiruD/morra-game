@@ -23,7 +23,8 @@ public class MasterDifficulty implements DifficultyInterface {
       ArrayList<Integer> aiGuesses = randomGuessMethod(pastTurns, round);
       return aiGuesses;
 
-    } // if its not the first 3 rounds, use the average method
+    }
+    // if its not the first 3 rounds, use the average method
     else {
       ArrayList<Integer> aiGuesses = new ArrayList<>();
       AverageStrategy master = new AverageStrategy();
