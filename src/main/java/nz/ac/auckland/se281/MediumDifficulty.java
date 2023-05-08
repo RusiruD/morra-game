@@ -17,18 +17,25 @@ public class MediumDifficulty implements DifficultyInterface {
 
   @Override
   public ArrayList<Integer> averageGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
+    RandomStrategy randomMethod = new RandomStrategy();
+    StrategySystem system = new StrategySystem(randomMethod);
 
     // if its the first 3 rounds, use the random method
     if (round <= 3) {
+      ArrayList<Integer> aiGuesses = new ArrayList<>();
 
-      ArrayList<Integer> aiGuesses = randomGuessMethod(pastTurns, round);
+      aiGuesses.addAll(system.guess(pastTurns));
+
       return aiGuesses;
 
     } else {
+
       // if its not the first 3 rounds, use the average method
+
       ArrayList<Integer> aiGuesses = new ArrayList<>();
+
       AverageStrategy averageMethod = new AverageStrategy();
-      StrategySystem system = new StrategySystem(averageMethod);
+      system.setStrategy(averageMethod);
 
       aiGuesses.addAll(system.guess(pastTurns));
 
@@ -40,13 +47,13 @@ public class MediumDifficulty implements DifficultyInterface {
 
   @Override
   public ArrayList<Integer> hardGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
-    // TODO Auto-generated method stub
+
     throw new UnsupportedOperationException("Unimplemented method 'hardMethod'");
   }
 
   @Override
   public ArrayList<Integer> masterGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
-    // TODO Auto-generated method stub
+
     throw new UnsupportedOperationException("Unimplemented method 'masterMethod'");
   }
 

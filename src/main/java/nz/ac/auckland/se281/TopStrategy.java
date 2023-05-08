@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class TopStrategy implements Strategy {
 
   @Override
-  public ArrayList<Integer> takeTurn(ArrayList pastTurns) {
+  public ArrayList<Integer> takeTurn(ArrayList<Integer> pastTurns) {
     // the ai guesses a random number of fingers between 1 and 5
     int aiFingers = (Utils.getRandomNumber(1, 5));
 

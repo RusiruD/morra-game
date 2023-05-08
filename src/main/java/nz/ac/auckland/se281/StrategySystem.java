@@ -15,7 +15,7 @@ public class StrategySystem {
   }
 
   // takes in the past turns and returns the guesses
-  public ArrayList guess(ArrayList<Integer> pastTurns) {
+  public ArrayList<Integer> guess(ArrayList<Integer> pastTurns) {
     return strategy.takeTurn(pastTurns);
   }
 

@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public interface Strategy {
   // takes in the past turns and returns the guesses
-  ArrayList takeTurn(ArrayList<Integer> pastTurns);
+  ArrayList<Integer> takeTurn(ArrayList<Integer> pastTurns);
 
 }

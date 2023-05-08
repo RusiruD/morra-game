@@ -52,20 +52,21 @@ public class Morra {
     // iterate the roundsPlayed every time play is called
     roundsPlayed = roundsPlayed + 1;
 
-    MessageCli.START_ROUND.printMessage(Integer.toString(roundsPlayed));
     int valid = 0;
     int fingers = 0;
     int sum = 0;
     aiPoints = 0;
-
+    MessageCli.START_ROUND.printMessage(Integer.toString(roundsPlayed));
     // keep asking the user till they give a valid input
     while (valid == 0) {
       MessageCli.ASK_INPUT.printMessage("Give <fingers> <sum> and press enter");
       String input = Utils.scanner.nextLine();
       String[] inputArray = input.split(" ");
-
-      fingers = Integer.parseInt(inputArray[0]);
-      sum = Integer.parseInt(inputArray[1]);
+      // if the user inputs a valid amount of fingers and sum, set the fingers and sum
+      if (Utils.isInteger(inputArray[0]) && Utils.isInteger(inputArray[1])) {
+        fingers = Integer.parseInt(inputArray[0]);
+        sum = Integer.parseInt(inputArray[1]);
+      }
 
       // if a valid amount of fingers and sum is guessed by the user output the info
       // message.

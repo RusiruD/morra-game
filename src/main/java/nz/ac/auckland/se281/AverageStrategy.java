@@ -17,7 +17,7 @@ public class AverageStrategy implements Strategy {
     average = average / pastTurns.size();
     average = Math.round(average);
     average = (int) average;
-    System.out.println(average);
+
     // ai guesses the sum by adding the average number of fingers played by the
     // human player to its finger guess
     int aiSum = (int) (aiFingers + average);
