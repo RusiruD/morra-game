@@ -22,11 +22,12 @@ public class Utils {
     }
     return true; // no exception!
   }
-/**
- * @param min
- * @param max
- * @return a random number between min and max (inclusive)
- */
+
+  /**
+   * @param min
+   * @param max
+   * @return a random number between min and max (inclusive)
+   */
   public static int getRandomNumber(int min, int max) {
     return random.nextInt(max - min + 1) + min;
   }

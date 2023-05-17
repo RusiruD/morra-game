@@ -76,8 +76,8 @@ public class Morra {
             Integer.toString(fingers),
             Integer.toString(sum));
         valid = 1;
-
       }
+
       // if a invalid amount of fingers and sum is guessed by the user output an error
       // message.
       else {
@@ -133,6 +133,7 @@ public class Morra {
       aiPoints = aiPoints + 1;
 
     }
+
     // if the sum of the fingers guessed by the user plus the fingers guessed by the
     // ai is only equal to the sum guessed by the user the user wins
     else if ((sum == (fingers + aiGuesses.get(0))) && sum != aiGuesses.get(1)) {
