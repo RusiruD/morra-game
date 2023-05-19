@@ -41,10 +41,10 @@ public class MasterDifficulty implements DifficultyInterface {
   public ArrayList<Integer> hardGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
     // if its the first 3 rounds, use the random method
     if (round <= 3) {
-
       ArrayList<Integer> aiGuesses = randomGuessMethod(pastTurns, round);
       return aiGuesses;
     }
+
     // if its not the first 3 rounds, use the top method
     else {
 
@@ -64,6 +64,7 @@ public class MasterDifficulty implements DifficultyInterface {
     if (round <= 3) {
       ArrayList<Integer> aiGuesses = randomGuessMethod(pastTurns, round);
       return aiGuesses;
+
     }
 
     // if its not the first 3 round alternate between the average and top strategys

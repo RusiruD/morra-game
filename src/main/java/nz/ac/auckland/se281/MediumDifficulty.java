@@ -47,14 +47,14 @@ public class MediumDifficulty implements DifficultyInterface {
 
   @Override
   public ArrayList<Integer> hardGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
+    return pastTurns;
 
-    throw new UnsupportedOperationException("Unimplemented method 'hardMethod'");
   }
 
   @Override
   public ArrayList<Integer> masterGuessMethod(ArrayList<Integer> pastTurns, Integer round) {
 
-    throw new UnsupportedOperationException("Unimplemented method 'masterMethod'");
+    return pastTurns;
   }
 
 }

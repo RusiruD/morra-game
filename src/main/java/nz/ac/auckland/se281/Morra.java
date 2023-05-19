@@ -122,7 +122,6 @@ public class Morra {
     // ai is only equal to the sum guessed by the AI, the AI wins
     if ((aiGuesses.get(1) == (fingers + aiGuesses.get(0))) && aiGuesses.get(1) != sum) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("AI_WINS");
-
       // if the AI wins the round and has the required number of points to win, print
       // the end game message and set gameLoaded to 0
       if (aiPoints + 1 == pointsTarget) {
@@ -131,7 +130,6 @@ public class Morra {
         return;
       }
       aiPoints = aiPoints + 1;
-
     }
 
     // if the sum of the fingers guessed by the user plus the fingers guessed by the
